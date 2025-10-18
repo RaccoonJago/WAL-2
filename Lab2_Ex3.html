@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 3 - Flexbox Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7c992; /* màu cam sữa nền */
+    }
+
+    .page {
+      width: 960px;
+      margin: 20px auto;
+      background-color: white;
+      border: 1px solid #d9b87a;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      min-height: 600px; /* đảm bảo trang đủ cao */
+    }
+
+    header, footer {
+      background-color: #fff;
+      text-align: left;
+      padding: 10px;
+      border: 1px solid #e0cfa3;
+      font-weight: bold;
+    }
+
+    /* Bố cục 3 cột */
+    .container {
+      display: flex;
+      flex: 1; /* để chiếm toàn bộ chiều cao còn lại giữa header và footer */
+      border-left: 1px solid #e0cfa3;
+      border-right: 1px solid #e0cfa3;
+      border-bottom: 1px solid #e0cfa3;
+    }
+
+    .sidebar, .main, .sidebar-right {
+      padding: 10px;
+      border-right: 1px solid #e0cfa3;
+      box-sizing: border-box;
+    }
+
+    .sidebar {
+      width: 180px;
+      background-color: #fff;
+    }
+
+    .main {
+      flex: 1;
+      background-color: #fff;
+    }
+
+    .sidebar-right {
+      width: 200px;
+      background-color: #fff;
+      border-right: none; /* bỏ đường viền phải cuối */
+    }
+
+    footer {
+      border-top: none;
+      border-bottom: 1px solid #e0cfa3;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>Header</header>
+
+    <div class="container">
+      <div class="sidebar">Sidebar A</div>
+      <div class="main">Main content</div>
+      <div class="sidebar-right">Sidebar B</div>
+    </div>
+
+    <footer>Footer</footer>
+  </div>
+</body>
+</html>

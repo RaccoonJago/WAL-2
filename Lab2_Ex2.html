@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Survey - Exercise 2</title>
+
+  <!-- Bootstrap 4.6 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <style>
+    body {
+      background: #fff;
+      font-family: Arial, sans-serif;
+      color: #000;
+    }
+
+    .page-wrap {
+      max-width: 760px;
+      margin: 30px auto;
+      border: 2px solid #1e6f7a; /* border similar to sample */
+      padding: 22px;
+      border-radius: 4px;
+    }
+
+    .logo {
+      width: 82px;
+      display: block;
+      margin: 6px 0 14px 18px;
+    }
+
+    /* Heading color only (teal) */
+    .heading-teal {
+      color: #0f7f79; /* teal like sample */
+      font-weight: 700;
+    }
+
+    .subtext {
+      color: #111;
+      margin-bottom: 18px;
+    }
+
+    /* Section titles teal */
+    .section-title {
+      color: #0f7f79;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-top: 8px;
+      margin-bottom: 12px;
+    }
+
+    .form-label {
+      color: #000;
+      font-weight: 600;
+    }
+
+    /* Narrow text fields like sample */
+    .small-input {
+      width: 260px;
+      max-width: 100%;
+    }
+
+    /* Inline radios/checkboxes */
+    .form-check-inline .form-check-input {
+      margin-left: 0;
+      margin-right: .35rem;
+    }
+
+    .submit-row {
+      margin-top: 14px;
+    }
+    .btn-gray {
+  background-color: #d9d9d9;   /* xám sáng */
+  color: #000;                 /* chữ đen */
+  border: 1px solid #a0a0a0;   /* viền xám đậm hơn một chút */
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-gray:hover {
+  background-color: #c0c0c0;   /* hơi đậm hơn khi hover */
+}
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <!-- IU Logo (make sure logo-hcmiu.svg is in same folder) -->
+   <img class="logo" src="logo-hcm.png" alt="HCMIU Logo">
+
+    <h2 class="heading-teal">Survey</h2>
+    <p class="subtext">
+      If you have a moment, we'd appreciate it if you would fill out this survey.
+    </p>
+
+    <!-- Your information -->
+    <div class="section-title">Your information:</div>
+
+    <form action="#" method="post" class="pl-2">
+      <div class="form-group row align-items-center">
+        <label class="col-sm-3 col-form-label form-label" for="fname">First Name</label>
+        <div class="col-sm-6">
+          <input id="fname" name="fname" type="text" class="form-control small-input" />
+        </div>
+      </div>
+
+      <div class="form-group row align-items-center">
+        <label class="col-sm-3 col-form-label form-label" for="lname">Last Name</label>
+        <div class="col-sm-6">
+          <input id="lname" name="lname" type="text" class="form-control small-input" />
+        </div>
+      </div>
+
+      <div class="form-group row align-items-center">
+        <label class="col-sm-3 col-form-label form-label" for="email">Email</label>
+        <div class="col-sm-6">
+          <input id="email" name="email" type="email" class="form-control small-input" />
+        </div>
+      </div>
+
+      <div class="form-group row align-items-center">
+        <label class="col-sm-3 col-form-label form-label" for="dob">Date of Birth</label>
+        <div class="col-sm-6">
+          <input id="dob" name="dob" type="date" class="form-control small-input" />
+        </div>
+      </div>
+
+      <!-- How did you hear about us? -->
+      <div class="section-title">How did you hear about us?</div>
+      <div class="form-group pl-2">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="hear" id="search" value="search" checked>
+          <label class="form-check-label" for="search">Search engine</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="hear" id="word" value="word">
+          <label class="form-check-label" for="word">Word of mouth</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="hear" id="social" value="social">
+          <label class="form-check-label" for="social">Social Media</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="hear" id="other" value="other">
+          <label class="form-check-label" for="other">Other</label>
+        </div>
+      </div>
+
+      <!-- Announcements -->
+      <div class="section-title">
+        Would you like to receive announcements about new CDs and special offers?
+      </div>
+      <div class="form-group pl-2">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="ann1" name="ann1" value="yes1">
+          <label class="form-check-label" for="ann1">YES, I'd like that.</label>
+        </div>
+
+        <div class="form-check mt-2">
+          <input class="form-check-input" type="checkbox" id="ann2" name="ann2" value="yes2">
+          <label class="form-check-label" for="ann2">YES, please send me email announcements.</label>
+        </div>
+      </div>
+
+      <!-- Contact method (combo box) -->
+      <div class="form-group pl-2">
+        <label class="form-label mr-2" for="contact">Please contact me by:</label>
+        <select id="contact" name="contact"
+          class="form-control d-inline-block small-input"
+          style="width:auto;">
+          <option>Email or postal mail</option>
+          <option>Email only</option>
+          <option>Postal mail only</option>
+        </select>
+      </div>
+
+      <!-- Submit -->
+      <div class="submit-row pl-2">
+        <button type="submit" class="btn btn-gray">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Optional: Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
